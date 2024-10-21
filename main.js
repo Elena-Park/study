@@ -998,3 +998,6 @@ const usersWithPhone = filterMembers.filter((member) => member.phone);
 console.log(usersWithPhone); // []
 
 // .find()
+// 배열에서 콜백 테스트를 처음으로 통과하는 요소를 반환
+// 만약 테스트가 통과하면 이후 테스트는 진행하지 않음
+// 만약 모든 테스트가 실패하면 'undefined'를 반한
