@@ -976,7 +976,7 @@ console.log(members.every((member) => member.age)); // true
 
 // .filter()
 const filterNumbers = [17, 20, 199, 5, 48];
-// 배열 아이템을 순회하면서 모든 아이템의 숫자가 30보다 작은지 확인
+// 배열 아이템을 순회하면서 30보다 작은 아이템을 찾음
 const filteredNum = filterNumbers.filter((num) => num < 30);
 console.log(filteredNum); // (3) [17, 20, 5]
 
@@ -985,7 +985,7 @@ const filterMembers = [
 	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
 	{ name: 'Lewis', age: 24 },
 ];
-// 배열의 객체데이터를 순회하면서 모든 객체데이터
+// 배열의 객체데이터를 순회하면서 콜백함수에서 지정한 프로퍼티를 테스트
 const youngUsers = filterMembers.filter((member) => member.age < 30);
 console.log(youngUsers);
 // 0: {name: 'Neo', age: 12, email: 'neo@gmail.com'}
@@ -998,6 +998,70 @@ const usersWithPhone = filterMembers.filter((member) => member.phone);
 console.log(usersWithPhone); // []
 
 // .find()
-// 배열에서 콜백 테스트를 처음으로 통과하는 요소를 반환
-// 만약 테스트가 통과하면 이후 테스트는 진행하지 않음
-// 만약 모든 테스트가 실패하면 'undefined'를 반한
+const findNumbers = [17, 20, 199, 5, 48];
+// 배열 아이템을 순회하면서 30보다 작은 아이템을 찾음 (단 찾으면 그 이후 아이템은 무시됨)
+const foundNum = findNumbers.find((num) => num < 30);
+console.log(foundNum); // 17
+
+const findUsers = [
+	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
+	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
+	{ name: 'Lewis', age: 24 },
+];
+// 배열의 객체데이터 내의 email 프로퍼티를 테스트하여 email 값이 false인 요소를 찾음
+const foundUser = findUsers.find((user) => !user.email);
+console.log(foundUser); // {name: 'Lewis', age: 24}
+
+// .findIndex()
+const fiNumbers = [17, 20, 199, 5, 48];
+// 배열 아이템을 순회하면서 30보다 작은 아이템을 찾음 (단 찾으면 그 이후 아이템은 무시됨)
+const indexNumbers = fiNumbers.findIndex((num) => num === 5);
+console.log(indexNumbers); // 3
+
+const fiUsers = [
+	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
+	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
+	{ name: 'Lewis', age: 24 },
+];
+// 배열의 객체데이터 내의 email 프로퍼티를 테스트하여 email 값이 false인 요소를 찾음
+const fiUserIndex = fiUsers.findIndex((user) => !user.email);
+console.log(fiUserIndex); // 2
+
+// .forEach()
+const feNumbers = [17, 20, 199, 5, 48];
+feNumbers.forEach((num) => {
+	console.log(num); // 17 20 199 5 48
+});
+
+let sum = 0;
+feNumbers.forEach((num) => {
+	sum += num;
+});
+console.log('합계:', sum); // 합계: 289
+
+for (const num of feNumbers) {
+	if (num > 100) {
+		break;
+	}
+	console.log(num); // 17 20
+}
+
+// .includes()
+const fruits5 = ['Apple', 'Banana', 'Cherry'];
+console.log(fruits5.includes('Apple')); // true
+console.log(fruits5.includes('banana')); // false
+
+const num5 = [17, 20, 199, 5, 48];
+console.log(num5.includes(20)); // true
+console.log(num5.includes(200)); // false
+
+// .join()
+const fruits6 = ['Apple', 'Banana', 'Cherry'];
+console.log(fruits6.join()); // 작성안함 : Apple,Banana,Cherry (쉼표가 기본값)
+console.log(fruits6.join('')); // 빈 문자열 : AppleBananaCherry (띄어쓰기도 없이 다 붙여서 반환)
+console.log(fruits6.join(', ')); // 쉼표, 띄어쓰기 : Apple, Banana, Cherry
+console.log(fruits6.join('/')); // 슬래쉬 : Apple/Banana/Cherry
+
+// 모든 글자를 다 쪼갠 후 반대로 뒤집어서 합친다는 의미 (10-1 String(문자)파트 내용과 동일)
+const msg3 = 'Hello World~!';
+console.log(msg3.split('').reverse().join('')); // !~dlroW olleH
