@@ -996,3 +996,5 @@ console.log(usersWithEmail);
 // 1: {name: 'Evan', age: 48, email: 'evan@gmail.com'}
 const usersWithPhone = filterMembers.filter((member) => member.phone);
 console.log(usersWithPhone); // []
+
+// .find()
