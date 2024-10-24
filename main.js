@@ -15,24 +15,24 @@ console.log('========================================================');
 
 // 배열(Array)
 const animals = ['Dog', 'Cat', 'Rabbit'];
-const numbers = [12, 27, 5, 9, 103];
+const nums = [12, 27, 5, 9, 103];
 
 // 배열의 길이를 확인합니다.
 console.log(animals); // (3) ['Dog', 'Cat', 'Rabbit']
-console.log(numbers); // (5) [12, 27, 5, 9, 103]
+console.log(nums); // (5) [12, 27, 5, 9, 103]
 
 // 배열의 아이템 번호(Index)로 아이템을 확인합니다.
 // 숫자는 0부터 시작합니다. (Zero-based Numbering)
 console.log(animals[2]); // Rabbit
-console.log(numbers[4]); // 103
+console.log(nums[4]); // 103
 // 배열 데이터의 아이템을 번호로 확인하는 것을 '배열 아이템을 인덱싱(indexing)한다'라고 부름 = 배열을 조회한다
 
 // 배열의 모든 아이템을 순회하며 확인합니다.
 for (let i = 0; i < animals.length; i += 1) {
 	console.log(animals[i]); // Dog Cat Rabbit
 }
-for (let i = 0; i < numbers.length; i += 1) {
-	console.log(numbers[i]); // 12 27 5 9 103
+for (let i = 0; i < nums.length; i += 1) {
+	console.log(nums[i]); // 12 27 5 9 103
 }
 
 console.log('========================================================');
@@ -41,31 +41,31 @@ console.log('========================================================');
 // 객체에 포함된 각 데이터를 속성(Property)라고 부르고,
 // 만약 그 데이터가 함수인 경우에는, 메소드(Method)라고 부릅니다.
 
-const user = {
-	// Key: Value
-	name: 'Neo',
-	age: 85,
-	isValid: true,
-	emails: ['neo@abc.com', 'neo@xyz.com'],
-	hello: function () {
-		return `My name is ${this.name}, I'm ${this.age}`;
-	},
-};
-console.log(user); //⇒ { name: 'Neo', age: 85, isValid: true, emails: [ 'neo@abc.com', 'neo@xyz.com' ], hello: [Function: hello] }
+// const user = {
+// 	// Key: Value
+// 	name: 'Neo',
+// 	age: 85,
+// 	isValid: true,
+// 	emails: ['neo@abc.com', 'neo@xyz.com'],
+// 	hello: function () {
+// 		return `My name is ${this.name}, I'm ${this.age}`;
+// 	},
+// };
+// console.log(user); //⇒ { name: 'Neo', age: 85, isValid: true, emails: [ 'neo@abc.com', 'neo@xyz.com' ], hello: [Function: hello] }
 
 // 점 표기법(Dot Notation)을 사용해, 객체의 속성이나 메소드에 접근할 수 있습니다.
-console.log(user.name); //⇒ Neo
-console.log(user.age); //⇒ 85
-console.log(user.isValid); //⇒ true
-console.log(user.emails); //⇒ [ 'neo@abc.com', 'neo@xyz.com' ]
-console.log(user.hello()); //⇒ My name is Neo, I'm 85
+// console.log(user.name); //⇒ Neo
+// console.log(user.age); //⇒ 85
+// console.log(user.isValid); //⇒ true
+// console.log(user.emails); //⇒ [ 'neo@abc.com', 'neo@xyz.com' ]
+// console.log(user.hello()); //⇒ My name is Neo, I'm 85
 
 // 대괄호 표기법(Bracket Notation)을 사용해, 객체의 속성이나 메소드에 접근할 수 있습니다.
-console.log(user['name']); //⇒ Neo
-console.log(user['age']); //⇒ 85
-console.log(user['isValid']); //⇒ true
-console.log(user['emails']); //⇒ [ 'neo@abc.com', 'neo@xyz.com' ]
-console.log(user['hello']()); //⇒ My name is Neo, I'm 85
+// console.log(user['name']); //⇒ Neo
+// console.log(user['age']); //⇒ 85
+// console.log(user['isValid']); //⇒ true
+// console.log(user['emails']); //⇒ [ 'neo@abc.com', 'neo@xyz.com' ]
+// console.log(user['hello']()); //⇒ My name is Neo, I'm 85
 
 console.log('========================================================');
 
@@ -115,12 +115,12 @@ if (0n) {
 if ('') {
 } // 빈 문자열 (*주의: 띄어쓰기 한칸이라도 있으면 일반 문자열이 됨)
 
-const fruits = ['Apple', 'Banana'];
-if (fruits.length) {
-	console.log('과일이 있어요!');
-	// 1) fruits 변수에 할당된 배열 데이터가 없다면 (빈 배열) length 속성의 값은 0이 됨
-	// 2) 숫자 0은 Falsy 값이므로 false로 반환되어 if문은 동작하지 않게 됨
-}
+// const fruits = ['Apple', 'Banana'];
+// if (fruits.length) {
+// 	console.log('과일이 있어요!');
+// 	// 1) fruits 변수에 할당된 배열 데이터가 없다면 (빈 배열) length 속성의 값은 0이 됨
+// 	// 2) 숫자 0은 Falsy 값이므로 false로 반환되어 if문은 동작하지 않게 됨
+// }
 
 /*
 const h1El = document.querySelector('h1') // 요소를 잘 찾게되면 h1El 변수는 객체 데이터가 됨 이것을 '요소 참조 객체'라고 함
@@ -651,6 +651,7 @@ console.log('========================================================');
 // 표준 내장 객체 (Built-in Object)
 
 // String (문자)
+
 const msg1 = 'Hello world!';
 const msg2 = 'The quick brown fox jumps over the lazy dog.';
 
@@ -857,9 +858,10 @@ console.log(roulette(101, 200)); // 101~199
 // Math.floor(84.708116276369385) + 101
 // Math.floor(185.708116276369385) => 185
 
-console.log('========================================================');
+console.log('--------------------------------------------------------');
 
 // Date (날짜)
+
 // 'new Date()'생성자 함수
 let today = new Date();
 console.log(today);
@@ -915,12 +917,12 @@ console.log(date1); // Thu Oct 17 2024 21:24:37 GMT+0900 (한국 표준시)
 console.log(date1.getTime()); // 1729167877155
 console.log(date2); // 1729167877155
 
-setTimeout(() => {
+/* setTimeout(() => {
 	// 현재 시간에서 특정시간 빼기
 	console.log(Date.now() - 1000000000000); // 729167877155
 	// 정적 메소드와 변수 동시 호출
 	console.log(Date.now(), date2); // 1729168528684 1729168527682
-}, 1000);
+}, 1000); */
 
 console.log('--------------------------------------------------------');
 
@@ -931,22 +933,29 @@ console.log('--------------------------------------------------------');
 console.log(new Date()); // Thu Oct 17 2024 21:40:45 GMT+0900 (한국 표준시)
 console.log(new Date().toISOString()); // 2024-10-17T12:40:45.689Z
 
-console.log('========================================================');
+console.log('------------------------ Array ------------------------');
 
 // Array (배열)
 
+const fruits = ['Apple', 'Banana', 'Cherry'];
+const numbers = [17, 20, 199, 5, 48];
+const users = [
+	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
+	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
+	{ name: 'Lewis', age: 24 },
+];
+
 // .length
-const animals2 = ['Dog', 'Cat', 'Rabbit'];
-console.log(animals2.length);
+console.log(fruits.length); // 3
 
 // .at()
-const fruits0 = ['Apple', 'Banana', 'Cherry'];
+
 // 기본적인 [ ] 대괄호 표기법 배열 인덱싱
-console.log(fruits0[0]); // Apple
-console.log(fruits0[fruits0.length - 1]); // 끝에서부터 조회하는 방법 // Cherry
+console.log(fruits[0]); // Apple
+console.log(fruits[fruits.length - 1]); // 끝에서부터 조회하는 방법 // Cherry
 // .at() 배열 인덱싱
-console.log(fruits0.at(0)); // Apple
-console.log(fruits0.at(-2)); // Banana
+console.log(fruits.at(0)); // Apple
+console.log(fruits.at(-2)); // Banana
 
 // .concat()
 const fruits1 = ['Apple', 'Banana', 'Cherry'];
@@ -960,86 +969,61 @@ console.log(fruits3); // (5) ['Apple', 'Banana', 'Cherry', 'Cherry', 'Orange']
 console.log(fruits4); // (5) ['Apple', 'Banana', 'Cherry', 'Cherry', 'Orange']
 
 // .every()
-const arrayNumbers = [17, 20, 199, 5, 48];
 // 배열 아이템을 순회하면서 모든 아이템의 숫자가 200보다 작은지 확인
-const isValid = arrayNumbers.every((item) => item < 200);
-console.log(isValid); // true
+// const isValid = numbers.every((item) => item < 200);
+// console.log(isValid); // true
 
-const members = [
-	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
-	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
-	{ name: 'Lewis', age: 24 },
-];
 // 배열의 객체데이터를 순회하면서 모든 객체데이터중에 email 또는 age에 프로퍼티 값이 있는지 확인
-console.log(members.every((member) => member.email)); // false
-console.log(members.every((member) => member.age)); // true
+console.log(users.every((member) => member.email)); // false
+console.log(users.every((member) => member.age)); // true
 
 // .filter()
-const filterNumbers = [17, 20, 199, 5, 48];
 // 배열 아이템을 순회하면서 30보다 작은 아이템을 찾음
-const filteredNum = filterNumbers.filter((num) => num < 30);
-console.log(filteredNum); // (3) [17, 20, 5]
+const filteredNumber = numbers.filter((num) => num < 30);
+console.log(filteredNumber); // (3) [17, 20, 5]
 
-const filterMembers = [
-	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
-	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
-	{ name: 'Lewis', age: 24 },
-];
 // 배열의 객체데이터를 순회하면서 콜백함수에서 지정한 프로퍼티를 테스트
-const youngUsers = filterMembers.filter((member) => member.age < 30);
+const youngUsers = users.filter((member) => member.age < 30);
 console.log(youngUsers);
 // 0: {name: 'Neo', age: 12, email: 'neo@gmail.com'}
 // 1: {name: 'Lewis', age: 24}
-const usersWithEmail = filterMembers.filter((member) => member.email);
+const usersWithEmail = users.filter((member) => member.email);
 console.log(usersWithEmail);
 // 0: {name: 'Neo', age: 12, email: 'neo@gmail.com'}
 // 1: {name: 'Evan', age: 48, email: 'evan@gmail.com'}
-const usersWithPhone = filterMembers.filter((member) => member.phone);
+const usersWithPhone = users.filter((member) => member.phone);
 console.log(usersWithPhone); // []
 
 // .find()
-const findNumbers = [17, 20, 199, 5, 48];
 // 배열 아이템을 순회하면서 30보다 작은 아이템을 찾음 (단 찾으면 그 이후 아이템은 무시됨)
-const foundNum = findNumbers.find((num) => num < 30);
-console.log(foundNum); // 17
+const foundNumber = numbers.find((num) => num < 30);
+console.log(foundNumber); // 17
 
-const findUsers = [
-	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
-	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
-	{ name: 'Lewis', age: 24 },
-];
 // 배열의 객체데이터 내의 email 프로퍼티를 테스트하여 email 값이 false인 요소를 찾음
-const foundUser = findUsers.find((user) => !user.email);
+const foundUser = users.find((member) => !member.email);
 console.log(foundUser); // {name: 'Lewis', age: 24}
 
 // .findIndex()
-const fiNumbers = [17, 20, 199, 5, 48];
 // 배열 아이템을 순회하면서 30보다 작은 아이템을 찾음 (단 찾으면 그 이후 아이템은 무시됨)
-const indexNumbers = fiNumbers.findIndex((num) => num === 5);
-console.log(indexNumbers); // 3
+const findIndexNumber = numbers.findIndex((num) => num === 5);
+console.log(findIndexNumber); // 3
 
-const fiUsers = [
-	{ name: 'Neo', age: 12, email: 'neo@gmail.com' },
-	{ name: 'Evan', age: 48, email: 'evan@gmail.com' },
-	{ name: 'Lewis', age: 24 },
-];
 // 배열의 객체데이터 내의 email 프로퍼티를 테스트하여 email 값이 false인 요소를 찾음
-const fiUserIndex = fiUsers.findIndex((user) => !user.email);
-console.log(fiUserIndex); // 2
+const findIndexUser = users.findIndex((member) => !member.email);
+console.log(findIndexUser); // 2
 
 // .forEach()
-const feNumbers = [17, 20, 199, 5, 48];
-feNumbers.forEach((num) => {
+numbers.forEach((num) => {
 	console.log(num); // 17 20 199 5 48
 });
 
 let sum = 0;
-feNumbers.forEach((num) => {
+numbers.forEach((num) => {
 	sum += num;
 });
 console.log('합계:', sum); // 합계: 289
 
-for (const num of feNumbers) {
+for (const num of numbers) {
 	if (num > 100) {
 		break;
 	}
@@ -1047,21 +1031,244 @@ for (const num of feNumbers) {
 }
 
 // .includes()
-const fruits5 = ['Apple', 'Banana', 'Cherry'];
-console.log(fruits5.includes('Apple')); // true
-console.log(fruits5.includes('banana')); // false
+console.log(fruits.includes('Apple')); // true
+console.log(fruits.includes('banana')); // false
 
-const num5 = [17, 20, 199, 5, 48];
-console.log(num5.includes(20)); // true
-console.log(num5.includes(200)); // false
+console.log(numbers.includes(20)); // true
+console.log(numbers.includes(200)); // false
 
 // .join()
-const fruits6 = ['Apple', 'Banana', 'Cherry'];
-console.log(fruits6.join()); // 작성안함 : Apple,Banana,Cherry (쉼표가 기본값)
-console.log(fruits6.join('')); // 빈 문자열 : AppleBananaCherry (띄어쓰기도 없이 다 붙여서 반환)
-console.log(fruits6.join(', ')); // 쉼표, 띄어쓰기 : Apple, Banana, Cherry
-console.log(fruits6.join('/')); // 슬래쉬 : Apple/Banana/Cherry
+console.log(fruits.join()); // 작성안함 : Apple,Banana,Cherry (쉼표가 기본값)
+console.log(fruits.join('')); // 빈 문자열 : AppleBananaCherry (띄어쓰기도 없이 다 붙여서 반환)
+console.log(fruits.join(', ')); // 쉼표, 띄어쓰기 : Apple, Banana, Cherry
+console.log(fruits.join('/')); // 슬래쉬 : Apple/Banana/Cherry
 
 // 모든 글자를 다 쪼갠 후 반대로 뒤집어서 합친다는 의미 (10-1 String(문자)파트 내용과 동일)
-const msg3 = 'Hello World~!';
+const msg3 = '안녕하세요! 만나서 반가워요~';
 console.log(msg3.split('').reverse().join('')); // !~dlroW olleH
+
+// .map()
+const doubleNumbers = numbers.map((num) => num * 2);
+console.log(doubleNumbers); // (5) [34, 40, 398, 10, 96]
+console.log(numbers); // (5) [17, 20, 199, 5, 48]
+
+const capitalizedFruits = fruits.map((fruits) => fruits.toUpperCase());
+console.log(capitalizedFruits); // (3) ['APPLE', 'BANANA', 'CHERRY']
+console.log(fruits); // (3) ['Apple', 'Banana', 'Cherry']
+
+const userEmails = users.map((member) => member.email);
+console.log(userEmails); // (3) ['neo@gmail.com', 'evan@gmail.com', undefined]
+console.log(userEmails.filter((email) => email)); // (2) ['neo@gmail.com', 'evan@gmail.com']
+
+// .push()
+// console.log(fruits.push('Durian')); // 4
+// console.log(fruits.length); // 4
+// console.log(fruits); // (4) ['Apple', 'Banana', 'Cherry', 'Durian']
+
+// console.log(numbers.push(9, 10, 11)); // 8
+// console.log(numbers.length); // 8
+// console.log(numbers); // (8) [17, 20, 199, 5, 48, 9, 10, 11]
+
+// .reduce()
+/* forEach 메소드로 합계 계산하기 */
+let sum1 = 0;
+numbers.forEach((num) => {
+	sum1 += num;
+});
+console.log('합계:', sum1); // 합계: 289
+
+/* reduce 메소드로 합계 계산하기 */
+// .reduce(콜백함수, 초기값)
+/* const sum2 = numbers.reduce((accumulator, num) => {
+	return accumulator + num;
+}, 0); */
+const sum2 = numbers.reduce((acc, num) => acc + num, 0);
+// 두번째 인수의 숫자 '0' : reduce 메소드의 콜백 함수가 처음 호출될때 사용할 초기값
+// 1) reduce 메소드에 지정된 초기값 => 처음 실행될때 콜백함수의 첫번째 매개변수인 accumulator로 들어감
+// 2) 첫번째 콜백함수 호출시 나온 0 + 17의 값 "17"은 두번째 콜백함수 호출시 다시 accumulator로 들어가서 다음 배열 아이템의 값 "20"과 더해지고, 더이상 호출할 아이템이 없을때까지 반복함
+console.log('합계:', sum2); // 합계: 289
+
+const sum3 = users.reduce((acc, member) => acc + member.age, 0);
+// 원리는 위와 동일하며 차이점은 users 변수 내의 객체데이터 중 age 프로퍼티값만 추출하여 합계를 계산함
+console.log(sum3); // 84
+
+// .reverse()
+const fruitsA = ['Apple', 'Banana', 'Cherry'];
+console.log(fruitsA.reverse()); // (3) ['Cherry', 'Banana', 'Apple']
+console.log(fruitsA); // (3) ['Cherry', 'Banana', 'Apple']
+
+const fruitsB = ['Apple', 'Banana', 'Cherry'];
+console.log([...fruitsB].reverse()); // (3) ['Cherry', 'Banana', 'Apple']
+console.log(fruitsB); // (3) ['Apple', 'Banana', 'Cherry']
+
+// split, reverse, join 메소드에 있는 글자 반전 효과와 동일한 내용 추가
+
+// .slice()
+const hundredNumbers = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+//                       0    1    2    3    4    5    6    7    8
+//                      -9   -8   -7   -6   -5   -4   -3   -2   -1
+
+console.log(hundredNumbers.slice(0, 3)); // (3) [100, 200, 300]
+console.log(hundredNumbers.slice(4, -1)); // (4) [500, 600, 700, 800]
+console.log(hundredNumbers.slice(4)); // (5) [500, 600, 700, 800, 900]
+console.log(hundredNumbers.slice(-4)); // (4) [600, 700, 800, 900]
+console.log(hundredNumbers.slice(-4, -1)); // (3) [600, 700, 800]
+console.log(hundredNumbers); // (9) [100, 200, 300, 400, 500, 600, 700, 800, 900]
+
+// .some()
+const isValid = numbers.some((number) => number > 2);
+console.log(isValid); // true
+
+console.log(users.some((member) => member.email)); // true
+console.log(users.some((member) => member.phone)); // false
+
+// .sort()
+// 콜백 미제공으로 유니코드 포인트 순서대로 정렬
+// numbers.sort();
+// console.log(numbers); // (5) [17, 199, 20, 48, 5]
+
+// // 오름차순으로 정렬
+// numbers.sort((a, b) => a - b); // 아이템이 a, b 매개변수에 순차적으로 들어가서 빼기 연산자로 나오는 결과는 양수, 음수, 0이며 그 값을 토대로 오름차순으로 정렬하는 것
+// console.log(numbers); // (5) [5, 17, 20, 48, 199]
+
+// // 내림차순으로 정렬
+// numbers.sort((a, b) => b - a);
+// console.log(numbers); // (5) [5, 17, 20, 48, 199]
+
+// // 나이 오름차순으로 정렬
+// users.sort((a, b) => a.age - b.age);
+// console.log(...users);
+// /* {name: 'Neo', age: 12, email: 'neo@gmail.com'}
+// {name: 'Lewis', age: 24}
+// {name: 'Evan', age: 48, email: 'evan@gmail.com'} */
+
+// // 나이 내림차순으로 정렬
+// users.sort((a, b) => b.age - a.age);
+// console.log(...users);
+// /* {name: 'Evan', age: 48, email: 'evan@gmail.com'}
+// {name: 'Lewis', age: 24}
+// {name: 'Neo', age: 12, email: 'neo@gmail.com'} */
+
+// .splice()
+
+// // 요소 추가
+// const animals1 = ['Dog', 'Cat', 'Rabbit'];
+// animals1.splice(2, 0, 'Tiger');
+// console.log(animals1); // (4) ['Dog', 'Cat', 'Tiger', 'Rabbit']
+
+// // 요소 삭제
+// const animals2 = ['Dog', 'Cat', 'Rabbit'];
+// animals2.splice(1, 1);
+// console.log(animals2); // (2) ['Dog', 'Rabbit']
+
+// // 요소 교체
+// const animals3 = ['Dog', 'Cat', 'Rabbit'];
+// animals3.splice(1, 1, 'Hamster', 'Duck', 'Bird');
+// console.log(animals3); // ['Dog', 'Hamster', 'Duck', 'Bird', 'Rabbit']
+
+// .unshift()
+// console.log(fruits.unshift('Grape')); // 4
+// console.log(fruits.length); // 4
+// console.log(fruits); // (4) ['Grape', 'Apple', 'Banana', 'Cherry']
+
+// console.log(numbers.unshift(9, 10, 11)); // 8
+// console.log(numbers.length); // 8
+// console.log(numbers); // (8) [9, 10, 11, 17, 20, 199, 5, 48]
+
+// Array.isArray() & Array.from()
+const arrayLikeFruits = {
+	0: 'Apple',
+	1: 'Banana',
+	2: 'Cherry',
+	length: 3,
+}; // 유사 배열 객체
+
+console.log(Array.isArray(fruits)); // true
+console.log(Array.isArray(arrayLikeFruits)); // false
+
+///////////////////////////////////
+
+console.log(fruits); // (3) ['Apple', 'Banana', 'Cherry'] <= 배열 데이터
+console.log(arrayLikeFruits); // {0: 'Apple', 1: 'Banana', 2: 'Cherry', length: 3} <= 객체 데이터
+
+console.log(fruits[1]); // Banana
+console.log(arrayLikeFruits[1]); // Banana
+
+console.log(fruits.length); // 3
+console.log(arrayLikeFruits.length); // 3
+
+console.log(fruits.map((fruits) => fruits.toUpperCase())); // (3) ['Apple', 'Banana', 'Cherry'] <= 배열 데이터
+console.log(Array.from(arrayLikeFruits).map((fruits) => fruits.toUpperCase())); // (3) ['Apple', 'Banana', 'Cherry'] <= 배열 데이터
+
+// 배열 메소드의 콜백은 항상 현재 반복의 인덱스를 얻을 수 있음
+numbers.every((num, idx) => {
+	console.log(num, idx); // 17 0 / 20 1 / 199 2 / 5 3 / 48 4
+	return true;
+});
+
+numbers.filter((num, idx) => {
+	console.log(num, idx); // 17 0 / 20 1 / 199 2 / 5 3 / 48 4
+});
+
+numbers.reduce((acc, cur, idx) => {
+	console.log(acc, cur, idx); // 0 17 0 / 17 20 1 / 37 199 2 / 236 5 3 / 241 48 4
+	return acc + cur;
+}, 0);
+
+console.log('------------------------ Object ------------------------');
+
+// Object (객체)
+
+// Object.assign()
+const target = { a: 1, b: 2 };
+const source1 = { b: 4, c: 7 };
+const source2 = { c: 9, d: 11 };
+
+// const result = Object.assign(target, source1, source2);
+// console.log(result); // {a: 1, b: 4, c: 9, d: 11}
+// console.log(target); // {a: 1, b: 4, c: 9, d: 11}
+
+const result = Object.assign({}, target, source1, source2);
+console.log(result); // {a: 1, b: 4, c: 9, d: 11}
+console.log(target); // {a: 1, b: 2}
+
+const userA = {
+	name: 'Young',
+	age: 35,
+};
+const userB = {
+	age: 27,
+	email: 'youremail@gmail.com',
+	isValid: true,
+};
+
+// const young = Object.assign(userA, userB);
+// console.log(young); // {name: 'Young', age: 27, email: 'youremail@gmail.com', isValid: true}
+// console.log(userA); // {name: 'Young', age: 27, email: 'youremail@gmail.com', isValid: true}
+
+const young = Object.assign({}, userA, userB);
+console.log(young); // {name: 'Young', age: 27, email: 'youremail@gmail.com', isValid: true}
+console.log(userA); // {name: 'Young', age: 35}
+
+// Object.keys()
+const user = {
+	name: 'Kim',
+	age: 39,
+	email: 'kim@gmail.com',
+	isValid: true,
+};
+const keys = Object.keys(user);
+console.log(keys); // (4) ['name', 'age', 'email', 'isValid']
+// const keys = ['name', 'age', 'email', 'isValid']
+
+// prettier-ignore
+keys.forEach((key) => {
+	const el = document.createElement('div');
+	el.innerHTML = `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}</strong>: ${user[key]}`;
+	document.body.append(el);
+}); // (웹 페이지 상에서) name: Kim   age: 39   email: kim@gmail.com   isValid: true
+
+// Object.values()
+const values = Object.values(user);
+console.log(values); // (4) ['Kim', 39, 'kim@gmail.com', true]
+// const values = ['Kim', 39, 'kim@gmail.com', true]
