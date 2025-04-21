@@ -70,68 +70,49 @@ console.log('========================================================');
 console.log('========================================================');
 
 // '참'으로 평가되는 값 (Truthy)
-if (true) {
-}
-if ({}) {
-} // 빈 객체
-if ([]) {
-} // 빈 배열
-if (42) {
-} // 숫자타입 데이터 (0이 아닌 숫자)
-if ('0') {
-} // 문자열타입의 0
-if ('false') {
-} // 문자열타입의 false
-if (new Date()) {
-} // 클래스
-if (-42) {
-} // 음수
-if (3.14) {
-} // 실수
-if (-3.14) {
-} // 음의 실수
-if (12n) {
-} // BigInd - 길이 제한이 없는 큰 정수 (Integer)를 표현하는 데이터타입의 일종
-if (Infinity) {
-} // 무한대
-if (-Infinity) {
-} // 음의 무한대
-if (false) {
-} // 그 외 등등...
+if (true) {}
+if ({}) {} // 빈 객체
+if ([]) {} // 빈 배열
+if (42) {} // 숫자타입 데이터 (0이 아닌 숫자)
+if ('0') {} // 문자열타입의 0
+if ('false') {} // 문자열타입의 false
+if (new Date()) {} // 클래스
+if (-42) {} // 음수
+if (3.14) {} // 실수
+if (-3.14) {} // 음의 실수
+if (12n) {} // BigInd - 길이 제한이 없는 큰 정수 (Integer)를 표현하는 데이터타입의 일종
+if (Infinity) {} // 무한대
+if (-Infinity) {} // 음의 무한대
+if (false) {} // 그 외 등등...
 
 // '거짓'으로 평가되는 값 (falsy)
-if (null) {
-}
-if (undefined) {
-}
-if (0) {
-} // 숫자 0
-if (-0) {
-} // 음의 0
-if (NaN) {
-} // Not a Number
-if (0n) {
-} // BigInd의 0
-if ('') {
-} // 빈 문자열 (*주의: 띄어쓰기 한칸이라도 있으면 일반 문자열이 됨)
+if ('') {} // 빈 문자열 (*주의: 띄어쓰기 한칸이라도 있으면 '일반 문자열'임)
+if (false) {}
+if (null) {}
+if (undefined) {}
+if (NaN) {} // Not a Number
+if (0) {} // 숫자 0
+if (-0) {} // 음의 0
+if (0n) {} // BigInd의 0
 
-// const fruits = ['Apple', 'Banana'];
-// if (fruits.length) {
-// 	console.log('과일이 있어요!');
-// 	// 1) fruits 변수에 할당된 배열 데이터가 없다면 (빈 배열) length 속성의 값은 0이 됨
-// 	// 2) 숫자 0은 Falsy 값이므로 false로 반환되어 if문은 동작하지 않게 됨
-// }
 
-/*
+/* const fruits = ['Apple', 'Banana'];
+if (fruits.length) {
+	console.log('과일이 있어요!');
+	// 1) fruits 변수에 할당된 배열 데이터가 없다면 (빈 배열) length 속성의 값은 0이 됨
+	// 2) 숫자 0은 Falsy 값이므로 false로 반환되어 if문은 동작하지 않게 됨
+}
+
+
 const h1El = document.querySelector('h1') // 요소를 잘 찾게되면 h1El 변수는 객체 데이터가 됨 이것을 '요소 참조 객체'라고 함
 if (h1El) {
 	// console.log(h1El.textContent)
 	if (!h1El.textContent) {
-		console.log('내용이 없습니다!')
+		console.log('내용이 없습니다!');
 	}  // 1) 현재 H1 엘리먼트 안의 텍스트컨텐츠가 없으므로 '빈 문자열'로 변환되면서 Falsy 값으로 반환됨
 		// 2) 앞에 부정연산자(!)를 붙이므로서 False의 반대값인 True가 반환되면서 if문이 동작하게 됨
-}
-*/
+} */
+
 
 console.log('========================================================');
 
@@ -162,8 +143,8 @@ console.log(data.number.constructor === Number);
 console.log(data.boolean.constructor === Boolean);
 // console.log(data.null.constructor); // Error!
 // console.log(data.undefined.constructor); // Error!
-console.log(data.array.constructor === Array);
-console.log(data.object.constructor === Object);
+console.log(data.array.constructor === Array); // ⭐
+console.log(data.object.constructor === Object); // ⭐
 console.log(data.function.constructor === Function);
 
 console.log('========================================================');
@@ -171,26 +152,26 @@ console.log('========================================================');
 // 삼항 연산자(Ternary Operator)
 // 조건 ? (조건이 참일 때 실행) : (조건이 거짓일 때 실행)
 
-// const fruits = ['Apple', 'Banana', 'Cherry'];
+/* const fruits = ['Apple', 'Banana', 'Cherry'];
 
 // if 조건문
-// if (fruits.length > 0) {
-// 	console.log('과일이 있어요!');
-// } else {
-// 	console.log('과일이 없어요..');
-// }
+if (fruits.length > 0) {
+	console.log('과일이 있어요!');
+} else {
+	console.log('과일이 없어요..');
+} // 과일이 있어요!
 
-// // 삼항 연산자
-// const massage = fruits.length > 0 ? '과일이 있어요!' : '과일이 없어요..';
-// console.log(massage);
+// 삼항 연산자
+const message = fruits.length > 0 ? '과일이 있어요!' : '과일이 없어요..';
+console.log(message); // 과일이 있어요!
 
 // // 삼항 연산자 - 예시 2
-// function includesText(el) {
-// 	return el.textContent ? '글자 있음!' : '글자 없음!';
-// }
+function includesText(el) {
+	return el.textContent ? '글자 있음!' : '글자 없음!';
+}
 
-// const h1El = document.querySelector('h1');
-// console.log(includesText(h1El)); // 글자 있음!
+const h1El = document.querySelector('h1');
+console.log(includesText(h1El)); // 글자 있음! */
 
 console.log('========================================================');
 
@@ -204,7 +185,7 @@ console.log(...spread); // 1 2 3
 const n1 = [1, 2, 3];
 const n2 = [2, 3, 4];
 const n3 = n1.concat(n2);
-const n4 = [...n1, ...n2];
+const n4 = [...n1, ...n2]; // ⭐
 console.log(n3); // [ 1, 2, 3, 2, 3, 4 ]
 console.log(n4); //  [ 1, 2, 3, 2, 3, 4 ]
 
@@ -212,7 +193,7 @@ console.log(n4); //  [ 1, 2, 3, 2, 3, 4 ]
 const o1 = { a: 1, b: 2, c: 3 };
 const o2 = { b: 99, c: 100, d: 101 };
 const o3 = Object.assign({}, o1, o2);
-const o4 = { ...o1, ...o2 };
+const o4 = { ...o1, ...o2 }; // ⭐
 console.log(o3); // { a: 1, b: 99, c: 100, d: 101 }
 console.log(o4); // { a: 1, b: 99, c: 100, d: 101 }
 
@@ -234,8 +215,8 @@ console.log(1 && 7 && 0); // 0
 console.log(1 && 0 && 7); // 0
 console.log(0 && 1 && 7); // 0
 console.log('X' && {} && null); // null
-console.log({} && 'Y' && []); // []
-console.log('' && 0 && undefined);
+console.log({} && 'Y' && []); // [] (true)
+console.log('' && 0 && undefined); // (아무값도 없음)
 
 console.log('========================================================');
 
@@ -256,7 +237,7 @@ console.log('' || 0 || NaN || false); // false
 
 console.log('========================================================');
 
-// 부정 연산자
+// 논리 부정 연산자
 
 // 중첩 사용
 console.log(!0); // true
@@ -281,37 +262,33 @@ console.log('========================================================');
 const age = 20;
 if (age >= 18) {
 	console.log('성인');
-}
+} // 성인
 
 const no = 7;
 if (no % 2 === 0) {
 	console.log('짝수');
 } else {
 	console.log('홀수');
-}
+} // 홀수
 
 /* 
-const inputEl = document.querySelector('input')
-const buttonEl = document.querySelector('button')
-const h1El = document.querySelector('h1')
+const inputEl = document.querySelector('input');
+const buttonEl = document.querySelector('button');
+const h1El = document.querySelector('h1');
 
 buttonEl.addEventListener('click', function () {
-	const score = Number(inputEl.value)
-	if (score >= 90) {
-		h1El.textContent = 'A'
-	} else if (score >= 80) {
-		h1El.textContent = 'B'
-	} else if (score >= 70) {
-		h1El.textContent = 'C'
-	} else if (score >= 60) {
-		h1El.textContent = 'D'
-	} else {
-		h1El.textContent = 'F'
-	}
-})
-*/
+	const score = Number(inputEl.value);
+	if (score >= 90) h1El.textContent = 'A';
+	else if (score >= 80) h1El.textContent = 'B';
+	else if (score >= 70) h1El.textContent = 'C';
+	else if (score >= 60) h1El.textContent = 'D';
+	else h1El.textContent = 'F';
+});
+ */
 
 console.log('========================================================');
+
+// switch문
 
 const prod = '노트북';
 
@@ -363,16 +340,16 @@ for (초기화문; 조건식; 증감식) {
 for (let i = 0; i < 10; i += 1) {
 	if (i > 5) {
 		break;
-	}
+	} // i 값이 5보다 크면 코드를 중단하겠다는 뜻
 	console.log(i);
 } // 0 1 2 3 4 5
 
 for (let i = 0; i < 10; i += 1) {
 	if (i % 2 === 0) {
 		continue;
-	}
+	} // i 값을 2로 나눈 나머지 값이 0과 일치하면 콘솔에 출력하지 않고 넘어가겠다는 뜻
 	console.log(i);
-} // 0 2 4 6 8
+} // 1 3 5 7 9
 
 console.log('========================================================');
 
@@ -382,13 +359,13 @@ console.log('========================================================');
 	}
 */
 
-let count = 1;
+let count = 0;
 
 while (count <= 10) {
 	const divEl = document.createElement('div');
 	divEl.textContent = count;
 	document.body.appendChild(divEl);
-	count += 1;
+	count += 1; // count = count + 1;
 } // 0 1 2 3 4 5 6 7 8 9 10
 
 for (let i = 0; i <= 10; i += 1) {
@@ -411,7 +388,7 @@ for (const color of colors) {
 	const divEl = document.createElement('div');
 	divEl.textContent = color;
 	document.body.appendChild(divEl);
-}
+} // Red Orange Green
 
 console.log('========================================================');
 
@@ -427,11 +404,11 @@ const profile = {
 for (const prop in profile) {
 	if (prop === 'age') {
 		continue;
-	}
-	console.log(prop, profile[prop]);
+	} // age 프로퍼티는 스킵하겠다는 뜻
+	console.log(prop, profile[prop]); // (콘솔창에서) name Henry   isValid true   email henrylove@gmail.com
 	const divEl = document.createElement('div');
 	divEl.innerHTML = `<b>${prop}</b>: ${profile[prop]}`;
-	document.body.appendChild(divEl);
+	document.body.appendChild(divEl); // (웹 페이지상에서) name: Henry  isValid: true  email: henrylove@gmail.com
 }
 
 console.log('========================================================');
@@ -691,6 +668,8 @@ console.log(msg2.split(' ')); // (9) ['The', 'quick', 'brown', 'fox', 'jumps', 
 
 // 빈 문자열 : 모든 글자를 다 쪼갠 후 배열로 반환 (띄어쓰기 포함)
 console.log(msg1.split('')); // (12) ['H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!']
+// 빈 문자열(2) : 두번째 인수 => 반환할 배열 갯수 지정
+console.log(msg1.split('', 5)); // (5) ['H', 'e', 'l', 'l', 'o']
 console.log(msg1.split('').reverse().join('')); // 모든 글자를 다 쪼갠 후 반대로 뒤집어서 합친다는 의미 // !dlrow olleH
 
 // .toLowerCase()
@@ -812,12 +791,12 @@ console.log(Math.abs(3.14)); // 3.14
 console.log(Math.abs(-3.14)); // 3.14
 
 console.log('// Math.ceil() //');
-console.log(Math.ceil(3.1415926535)); // 4
+console.log(Math.ceil(3.415926535)); // 4
 console.log(Math.ceil(3.1415926535 * 100) / 100); // 3.15
 
 console.log('// Math.floor() //');
-console.log(Math.floor(3.1415926535)); // 3
-console.log(Math.floor(3.1415926535 * 100) / 100); // 3.14
+console.log(Math.floor(3.7415926535)); // 3
+console.log(Math.floor(3.7415926535 * 100) / 100); // 3.74
 
 console.log('// Math.round() //');
 console.log(Math.round(3.141)); // 3
@@ -836,6 +815,10 @@ console.log(Math.min(10, 128, 12, 49, 7)); // 7
 const mathNumbers = [10, 128, 12, 49, 7];
 console.log(Math.max(...mathNumbers)); // 128
 console.log(Math.min(...mathNumbers)); // 7
+// 위의 전개연산자로 반환하는 것과 동일한 효과와 결과를 낳음
+// 전개연산자가 더 간결하고 직관적이므로 전개연산자를 사용할 것을 권장
+console.log(Math.max.apply(null, mathNumbers)); // 128
+console.log(Math.min.apply(null, mathNumbers)); // 7
 
 console.log('// Math.random() //');
 console.log(Math.random()); // 0.9715976446671295 (랜덤)
@@ -877,7 +860,7 @@ console.log(today.getSeconds()); // 초
 
 // 웹페이지에 시간 출력하기
 const h1ElDate = document.querySelector('h1.date');
-// prettier-ignore
+
 h1ElDate.textContent = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일 ${getDayKR(today.getDay())} ${today.getHours()}시 ${today.getMinutes()}분 ${today.getSeconds()}초`;
 
 // 요일 : 숫자 => 한글로 바꾸기
@@ -1060,6 +1043,8 @@ const userEmails = users.map((member) => member.email);
 console.log(userEmails); // (3) ['neo@gmail.com', 'evan@gmail.com', undefined]
 console.log(userEmails.filter((email) => email)); // (2) ['neo@gmail.com', 'evan@gmail.com']
 
+
+
 // .push()
 // console.log(fruits.push('Durian')); // 4
 // console.log(fruits.length); // 4
@@ -1068,6 +1053,13 @@ console.log(userEmails.filter((email) => email)); // (2) ['neo@gmail.com', 'eva
 // console.log(numbers.push(9, 10, 11)); // 8
 // console.log(numbers.length); // 8
 // console.log(numbers); // (8) [17, 20, 199, 5, 48, 9, 10, 11]
+
+// // .pop()
+// console.log(fruits.pop()); // Durian
+// console.log(fruits.length); // 3
+// console.log(fruits); // (3) ['Apple', 'Banana', 'Cherry']
+
+
 
 // .reduce()
 /* forEach 메소드로 합계 계산하기 */
@@ -1124,56 +1116,89 @@ console.log(users.some((member) => member.phone)); // false
 
 // .sort()
 // 콜백 미제공으로 유니코드 포인트 순서대로 정렬
-// numbers.sort();
-// console.log(numbers); // (5) [17, 199, 20, 48, 5]
+numbers.sort();
+console.log(numbers); // (5) [17, 199, 20, 48, 5]
 
-// // 오름차순으로 정렬
-// numbers.sort((a, b) => a - b); // 아이템이 a, b 매개변수에 순차적으로 들어가서 빼기 연산자로 나오는 결과는 양수, 음수, 0이며 그 값을 토대로 오름차순으로 정렬하는 것
-// console.log(numbers); // (5) [5, 17, 20, 48, 199]
+// 오름차순으로 정렬
+numbers.sort((a, b) => a - b); // 아이템이 a, b 매개변수에 순차적으로 들어가서 빼기 연산자로 나오는 결과는 양수, 음수, 0이며 그 값을 토대로 오름차순으로 정렬하는 것
+console.log(numbers); // (5) [5, 17, 20, 48, 199]
 
-// // 내림차순으로 정렬
-// numbers.sort((a, b) => b - a);
-// console.log(numbers); // (5) [5, 17, 20, 48, 199]
+// 내림차순으로 정렬
+numbers.sort((a, b) => b - a);
+console.log(numbers); // (5) [5, 17, 20, 48, 199]
 
-// // 나이 오름차순으로 정렬
-// users.sort((a, b) => a.age - b.age);
-// console.log(...users);
-// /* {name: 'Neo', age: 12, email: 'neo@gmail.com'}
-// {name: 'Lewis', age: 24}
-// {name: 'Evan', age: 48, email: 'evan@gmail.com'} */
+// 나이 오름차순으로 정렬
+users.sort((a, b) => a.age - b.age);
+console.log(...users);
+/* {name: 'Neo', age: 12, email: 'neo@gmail.com'}
+{name: 'Lewis', age: 24}
+{name: 'Evan', age: 48, email: 'evan@gmail.com'} */
 
-// // 나이 내림차순으로 정렬
-// users.sort((a, b) => b.age - a.age);
-// console.log(...users);
-// /* {name: 'Evan', age: 48, email: 'evan@gmail.com'}
-// {name: 'Lewis', age: 24}
-// {name: 'Neo', age: 12, email: 'neo@gmail.com'} */
+// 나이 내림차순으로 정렬
+users.sort((a, b) => b.age - a.age);
+console.log(...users);
+/* {name: 'Evan', age: 48, email: 'evan@gmail.com'}
+{name: 'Lewis', age: 24}
+{name: 'Neo', age: 12, email: 'neo@gmail.com'} */
+
+const names = ['Choi', 'Byung', 'Kim', 'Park', 'ahn', 'kim'];
+console.log(names.sort()); // ['Byung', 'Choi', 'Kim', 'Park', 'ahn', 'kim']
+
+// abc순으로 정렬
+names.sort((a, b) => {
+	a = a.toUpperCase();
+	b = b.toUpperCase();
+	if (a > b) return 1;
+	else if (b > a) return -1;
+	else return 0;
+});
+console.log(names); // ['ahn', 'Byung', 'Choi', 'Kim', 'kim', 'Park']
+
+// abc 역순으로 정렬
+names.sort((a, b) => {
+	a = a.toUpperCase();
+	b = b.toUpperCase();
+	if (a < b) return 1;
+	else if (b < a) return -1;
+	else return 0;
+});
+console.log(names); // ['Park', 'Kim', 'kim', 'Choi', 'Byung', 'ahn']
+
+
 
 // .splice()
+// 요소 추가
+const animals1 = ['Dog', 'Cat', 'Rabbit'];
+animals1.splice(2, 0, 'Tiger');
+console.log(animals1); // (4) ['Dog', 'Cat', 'Tiger', 'Rabbit']
 
-// // 요소 추가
-// const animals1 = ['Dog', 'Cat', 'Rabbit'];
-// animals1.splice(2, 0, 'Tiger');
-// console.log(animals1); // (4) ['Dog', 'Cat', 'Tiger', 'Rabbit']
+// 요소 삭제
+const animals2 = ['Dog', 'Cat', 'Rabbit'];
+animals2.splice(1, 1);
+console.log(animals2); // (2) ['Dog', 'Rabbit']
+// 요소 교체
+const animals3 = ['Dog', 'Cat', 'Rabbit'];
+animals3.splice(1, 1, 'Hamster', 'Duck', 'Bird');
+console.log(animals3); // ['Dog', 'Hamster', 'Duck', 'Bird', 'Rabbit']
+animals3.splice(3);
+console.log(animals3); // ['Dog']
 
-// // 요소 삭제
-// const animals2 = ['Dog', 'Cat', 'Rabbit'];
-// animals2.splice(1, 1);
-// console.log(animals2); // (2) ['Dog', 'Rabbit']
 
-// // 요소 교체
-// const animals3 = ['Dog', 'Cat', 'Rabbit'];
-// animals3.splice(1, 1, 'Hamster', 'Duck', 'Bird');
-// console.log(animals3); // ['Dog', 'Hamster', 'Duck', 'Bird', 'Rabbit']
 
 // .unshift()
-// console.log(fruits.unshift('Grape')); // 4
-// console.log(fruits.length); // 4
-// console.log(fruits); // (4) ['Grape', 'Apple', 'Banana', 'Cherry']
+console.log(fruits.unshift('Grape')); // 4
+console.log(fruits.length); // 4
+console.log(fruits); // (4) ['Grape', 'Apple', 'Banana', 'Cherry']
 
-// console.log(numbers.unshift(9, 10, 11)); // 8
-// console.log(numbers.length); // 8
-// console.log(numbers); // (8) [9, 10, 11, 17, 20, 199, 5, 48]
+console.log(numbers.unshift(9, 10, 11)); // 8
+console.log(numbers.length); // 8
+console.log(numbers); // (8) [9, 10, 11, 17, 20, 199, 5, 48]
+
+console.log(fruits.shift()); // Grape
+console.log(fruits.length); // 3
+console.log(fruits); // (3) ['Apple', 'Banana', 'Cherry']
+
+
 
 // Array.isArray() & Array.from()
 const arrayLikeFruits = {
@@ -1197,8 +1222,8 @@ console.log(arrayLikeFruits[1]); // Banana
 console.log(fruits.length); // 3
 console.log(arrayLikeFruits.length); // 3
 
-console.log(fruits.map((fruits) => fruits.toUpperCase())); // (3) ['Apple', 'Banana', 'Cherry'] <= 배열 데이터
-console.log(Array.from(arrayLikeFruits).map((fruits) => fruits.toUpperCase())); // (3) ['Apple', 'Banana', 'Cherry'] <= 배열 데이터
+console.log(fruits.map((fruits) => fruits.toUpperCase())); // (3) ['APPLE', 'BANANA', 'CHERRY'] <= 배열 데이터
+console.log(Array.from(arrayLikeFruits).map((fruits) => fruits.toUpperCase())); // (3) ['APPLE', 'BANANA', 'CHERRY'] <= 배열 데이터
 
 // 배열 메소드의 콜백은 항상 현재 반복의 인덱스를 얻을 수 있음
 numbers.every((num, idx) => {
@@ -1250,6 +1275,8 @@ const young = Object.assign({}, userA, userB);
 console.log(young); // {name: 'Young', age: 27, email: 'youremail@gmail.com', isValid: true}
 console.log(userA); // {name: 'Young', age: 35}
 
+
+
 // Object.keys()
 const user = {
 	name: 'Kim',
@@ -1261,14 +1288,25 @@ const keys = Object.keys(user);
 console.log(keys); // (4) ['name', 'age', 'email', 'isValid']
 // const keys = ['name', 'age', 'email', 'isValid']
 
-// prettier-ignore
 keys.forEach((key) => {
 	const el = document.createElement('div');
 	el.innerHTML = `<strong>${key.charAt(0).toUpperCase() + key.slice(1)}</strong>: ${user[key]}`;
 	document.body.append(el);
 }); // (웹 페이지 상에서) name: Kim   age: 39   email: kim@gmail.com   isValid: true
 
+
+
 // Object.values()
 const values = Object.values(user);
 console.log(values); // (4) ['Kim', 39, 'kim@gmail.com', true]
 // const values = ['Kim', 39, 'kim@gmail.com', true]
+
+
+
+// JSON
+// 자바스크립트 데이터를 JSON 문자로 변환
+const json = JSON.stringify(user);
+console.log(json); // {"name":"Kim","age":39,"email":"kim@gmail.com","isValid":true}
+
+// JSON 문자를 자바스크립트 데이터로 변환
+console.log(JSON.parse(json)); // {name: 'Kim', age: 39, email: 'kim@gmail.com', isValid: true}

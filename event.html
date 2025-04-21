@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>이벤트 (Event)</title>
+	<script type="module" defer src="./event.js"></script>
+	<style>
+		body {
+			background-color: #151515;
+		}
+		.parent {
+			width: 300px;
+			height: 300px;
+			margin: 30px;
+			padding: 20px;
+			border: 10px solid #f0f0f0;
+			background-color: tomato;
+			overflow: auto;
+		}
+		.child {
+			position: relative;
+			width: 200px;
+			height: 100px;
+			margin-bottom: 20px;
+			border: 10px solid #f0f0f0;
+			background-color: orange;
+			font-size: 40px;
+			font-weight: 900;
+		}
+		.child a,
+		.child a:visited {
+			text-decoration: none;
+			color: #222;
+		}
+		.child a:hover,
+		.child a:active {
+			color: firebrick;
+		}
+		.child a:focus-visible {
+			padding: 5px;
+			color: midnightblue;
+			border: 5px solid midnightblue;
+			outline: 0;
+		}
+		input {
+			margin: 30px;
+			width: 350px;
+			height: 50px;
+			outline: 0;
+			font-size: 30px;
+		}
+		.tooltip {
+			position: absolute;
+			top: 70px;
+			left: 0px;
+			z-index: 1;
+			width: 250px;
+			padding: 10px;
+			border: 2px solid darkolivegreen;
+			border-radius: 10px;
+			background-color: yellowgreen;
+			font-size: 24px;
+			display: none;
+		}
+		.tooltip.active {
+			display: block;
+		}
+
+		#login {
+			width: 300px;
+			padding: 20px;
+			border: 10px solid #888;
+			background-color: #fff;
+			transition: 0.4s;
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		#login.active{
+			border-color: royalblue;
+		}
+		.login-input {
+			margin: 0;
+			width: 292px;
+			height: 30px;
+			font-size: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="parent">
+		<div class="child">
+			<a href="https://google.com" target="_blank">사과</a>
+			<div class="tooltip">
+				동해물과 백두산이 마르고 닳도록, 하느님이 보우하사 우리나라 만세~
+			</div>
+		</div>
+		<div class="child">
+			<a href="https://naver.com" target="_blank">바나나</a>
+		</div>
+		<div class="child">
+			<a href="https://zero-base.co.kr" target="_blank">체리</a>
+		</div>
+	</div>
+	<input type="text" />
+	<form id="login">
+		<input class="login-input" type="text" placeholder="ID" autocomplete="username" />
+		<input class="login-input" type="password" placeholder="PW" autocomplete="current-password" />
+		<button type="reset">초기화</button>
+		<button type="submit">로그인</button>
+	</form>
+</body>
+</html>
